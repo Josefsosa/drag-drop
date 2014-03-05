@@ -1,0 +1,31 @@
+<div class="container toolbar">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Scrolling Time: {{scrollingTime | number}} ms
+    </div>
+    <div class="panel-body">
+      <form class="form-inline" role="form">
+        <label><input type="checkbox" ng-model="cachedMode"> Cached</label>
+        <button type="button" class="btn btn-primary pull-right" ng-click="reload()">
+          Reload
+        </button>
+      </form>
+    </div>
+    <table class="table table-striped" msd-wheel="scroll($deltaY)">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Item Description</th>
+        <th>Item value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in data" post-repeat-timer>
+        <td>{{$index}}</td>
+        <td><a href="#people">{{item.description}}</a></td>
+        <td>{{item.value}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

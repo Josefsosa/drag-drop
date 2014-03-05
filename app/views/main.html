@@ -1,0 +1,41 @@
+<div ng-controller="MainCtrl">
+  <div data-hbo-tabs id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Tab 1</a></li>
+      <li><a href="#tabs-2">Tab 2</a></li>
+      <li><a href="#tabs-3">Tab 3</a></li>
+    </ul>
+    <div id="tabs-1">
+      <p>Content for Tab 1</p>
+    </div>
+    <div id="tabs-2">
+      <p>Content for Tab 2</p>
+    </div>
+    <div id="tabs-3">
+      <p>Content for Tab 3</p>
+    </div>
+  </div>
+
+<div class='contentWrapper ng-cloak'>
+  <div class='content'>
+    <ul class="thumbnails">
+      <li class="span3" style='margin-left:10px;'>
+        <div class="productThumbnails" data-drop="true" ng-model='list1' data-jqyoui-options="optionsList1" jqyoui-droppable="{}">
+          <div class="caption">
+            <div class="img btn-draggable" ng-repeat="item in list1" ng-show="item.title" data-drag="{{item.drag}}" ng-model="list1" jqyoui-draggable="{index: {{$index}},animate:false, onStop:'stopped'}"><img ng-src="{{item.image}}"></div>
+          </div>
+        </div>
+      </li>
+      <li class="span3" style='margin-left:10px;'>
+        <div class="dropArea" data-drop="true" ng-model='list2' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list2])', refreshPositions:true}"  jqyoui-droppable="{onDrop: 'drop'}">
+          <div class="caption">
+            <div class="img btn-draggable" ng-repeat="item in list2" ng-style="optionsStyle(item.style,$index)" ng-show="item.title" data-drag="{{item.drag}}" data-jqyoui-options="{}" ng-model="list2" jqyoui-draggable="{index: {{$index}},animate:false, onStop: 'stop'}"><img ng-src="{{item.image}}"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <input text="text" ng-model="name" /> {{ name }}
+
+</div>
+</div>

@@ -1,0 +1,39 @@
+<div ng-controller="lineSheetCtrl">
+  <div data-hbo-tabs id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Line Sheet POC</a></li>
+      <li><a href="#tabs-2">Extended Pager POC</a></li>
+      <li><a href="#tabs-3">Whiteboard POC</a></li>
+    </ul>
+    <div id="tabs-1">
+      <div class='contentWrapper ng-cloak'>
+        <div class='content'>
+          <div>
+            <div id="fixed" when-scrolled="loadData()">
+              <span ng-repeat="i in productList | startFrom: currentPage * pageSize  | limitTo:pageSize" class="sli" >
+                <img ng-src="{{i.image}}" /> Title: {{i.title}}, Style: {{i.style}} <br />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tabs-2">
+        <div class='contentWrapper ng-cloak'>
+          <div class='content'>
+            <div >
+              <p>Tab 2 content:
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="tabs-3">
+      <div class='content'>
+        <div >
+          <p>Tab 3 content:
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

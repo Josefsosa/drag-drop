@@ -1,0 +1,21 @@
+<div ng-controller="CartCtrl">
+  <div data-hbo-tabs id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Line Sheet POC</a></li>
+    </ul>
+    <div id="tabs-1">
+      <div class='contentWrapper ng-cloak'>
+        <div class='content'>
+          <div>
+            <div id="fixed">
+              <span ng-repeat="i in productList" class="sli" >
+                <img ng-src="{{i.image}}" /> Title: {{i.title}}, Style: {{i.style}} <br />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
